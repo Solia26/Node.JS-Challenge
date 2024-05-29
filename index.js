@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs/promises");
 const path = require("path");
+const { renderLicenseSection } = require("./utils/generateMarkdown");
 
 const pathToReadme = path.join(process.cwd(), "README.md");
 
@@ -61,12 +62,29 @@ const questions = [
   },
 ];
 
-const readmeTemplate = `
-# {{title}}
+// Функция для генерации README
+const generateReadmeFile = async (questions) => {
+  try {
+    const answers = await inquirer.prompt(questions);
+
+    const {
+      title,
+      description,
+      installation,
+      usage,
+      contributing,
+      tests,
+      license,
+      github,
+      email,
+    } = answers;
+
+    const readmeContent = `
+# ${title}
 
 ## Description
 
-{{description}}
+${description}
 
 ## Table of Contents
 - [Installation](#installation)
@@ -78,37 +96,30 @@ const readmeTemplate = `
 
 ## Installation
 
-{{installation}}
+${installation}
 
 ## Usage
 
-{{usage}}
+${usage}
 
 ## Contributing
 
-{{contributing}}
+${contributing}
 
 ## Tests
 
-{{tests}}
+${tests}
 
 ## License
 
-{{license}}
+${renderLicenseSection(license)}
+
+${license}
 
 ## Questions
 
-For any questions, please reach out to me via [GitHub](https://github.com/{{github}}) or [email](mailto:{{email}}).
+For any questions, please reach out to me via [GitHub](https://github.com/${github}) or [email](mailto:${email}).
 `;
-
-const generateReadmeFile = async ({ questions, readmeTemplate }) => {
-  try {
-    const answers = await inquirer.prompt(questions);
-
-    const readmeContent = readmeTemplate.replace(
-      /{{([^}]+)}}/g,
-      (match, key) => answers[key]
-    );
 
     await fs.writeFile(pathToReadme, readmeContent, "utf-8");
   } catch (error) {
@@ -116,4 +127,4 @@ const generateReadmeFile = async ({ questions, readmeTemplate }) => {
   }
 };
 
-generateReadmeFile({ questions, readmeTemplate });
+generateReadmeFile(questions);
