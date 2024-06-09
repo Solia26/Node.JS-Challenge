@@ -15,32 +15,32 @@ Readme generator
 
 ## Installation
 
-in node
+use node js
 
 ## Usage
 
-to generate readme with node.js
+open in vs code
 
 ## Contributing
 
-use it
+type
 
 ## Tests
 
-open in vs code
+generate readme
 
 ## License
 
 
 ## License
 
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the GPLv3 License.
 
-[![License](https://img.shields.io/badge/License-apache2.0-brightgreen.svg)](https://opensource.org/licenses/apache-2-0)
-View the [license](https://opensource.org/licenses/apache-2-0) for more information.
+[![License](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://opensource.org/licenses/gpl-3-0)
+View the [license](https://opensource.org/licenses/gpl-3-0) for more information.
 
 
-Apache 2.0
+GPLv3
 
 ## Questions
 
