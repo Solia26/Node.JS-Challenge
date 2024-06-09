@@ -1,9 +1,9 @@
 
-# Proj
+# Node Readme
 
 ## Description
 
-gg
+Readme generator
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,19 +15,19 @@ gg
 
 ## Installation
 
-ff
+in node
 
 ## Usage
 
-ddd
+to generate readme with node.js
 
 ## Contributing
 
-dddd
+use it
 
 ## Tests
 
-dddd
+open in vs code
 
 ## License
 
@@ -44,4 +44,4 @@ Apache 2.0
 
 ## Questions
 
-For any questions, please reach out to me via [GitHub](https://github.com/ddd) or [email](mailto:ddd).
+For any questions, please reach out to me via [GitHub](https://github.com/Solia_26) or [email](mailto:solomiia0403@gmail.com).
